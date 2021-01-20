@@ -1,18 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.79.0">
     <title>Bíblia Free - @yield('title')</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
-    
-    <!-- Custom styles for this template -->
-    <link href="pricing.css" rel="stylesheet">
   </head>
   <body>
     
@@ -20,12 +15,11 @@
   <p class="h5 my-0 me-md-auto fw-normal">Bíblia Free</p>
   <nav class="my-2 my-md-0 me-md-3">
     <a class="p-2 text-dark" href="/">Home</a>
-    <a class="p-2 text-dark" href="/biblies">Bíblias</a>
     <a class="p-2 text-dark" href="/themes">Temas</a>
   </nav>
 </header>
 
-<main class="container">
+<div class="container">
     @yield('content')
 
   <footer class="pt-4 my-md-5 pt-md-5 border-top">
@@ -61,7 +55,7 @@
       </div>
     </div>
   </footer>
-</main>
+</div>
 
 
     

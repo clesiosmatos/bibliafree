@@ -4,19 +4,13 @@
 
 @section('content')
     <div class="row">
-        <div class="col-8">
-            <p class="h2">{{ $book[0]->name }} {{ $chapter }}</p>
-                @foreach ($bibles as $bible)
-                    <p>{{ $bible->verse }}</p>
-                @endforeach
-        </div>
-        <div class="col-4">
-            <p class="h4">Capítulos</p>
-            <p>
-                @for($i=1; $i <= $chapters; $i++)
-                    <a href="/acf/{{ $book[0]->abreviation }}/{{ $i }}">{{ $i }}</a>
+        <div class="col-12">
+            <h2>{{ $book[0]->name }}</h2>
+            <ul>
+                @for($i=1; $i <= $book[0]->chapters; $i++)
+                    <li class="d-inline p-3 fs-1"><a href="/acf/{{ $book[0]->abreviation }}/{{ $i }}">{{ $i }}</a></li>
                 @endfor
-            </p>
+            </ul>
         </div>
     </div>
 @endsection

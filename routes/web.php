@@ -16,12 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\HomeController@show');
 
-Route::get('/biblies', function () {
-    return view('biblies');
-});
-
-Route::get('/{version}/{book}/{chapter}', 'App\Http\Controllers\BookController@show');
-Route::get('/{version}/{book}', 'App\Http\Controllers\BookController@show');
+Route::get('/{version}/{book}/{chapter}', 'App\Http\Controllers\BookController@showChapter');
+Route::get('/{version}/{book}', 'App\Http\Controllers\BookController@showChapters');
 
 Route::get('/{version}', 'App\Http\Controllers\VersionController@show');
 

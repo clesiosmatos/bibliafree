@@ -11,7 +11,17 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class BookController extends Controller
 {
-    public function show($version, $book, $chapter = null)
+    public function showChapters($version, $book)
+    {
+        $bookAux = Book::where('abreviation', $book)->get();
+
+        return view('chapters', [
+            'version' => $version,
+            'book' => $bookAux
+        ]);
+    }
+
+    public function showChapter($version, $book, $chapter = null)
     {
         $book = Book::where('abreviation', $book)->get();
         $bibles = Bible::where('version_abreviation', $version)
@@ -20,15 +30,7 @@ class BookController extends Controller
         ->orderBy('number', 'ASC')
         ->get();
 
-        if(!$chapter){
-            $bibles = Bible::where('version_abreviation', $version)
-            ->where('book_id', $book[0]->id)
-            ->where('chapter', 1)
-            ->orderBy('number', 'ASC')
-            ->get();
-        }
-
-        return view('chapters', [
+        return view('chapter', [
             'book' => $book,
             'chapter' => $chapter,
             'bibles' => $bibles,
