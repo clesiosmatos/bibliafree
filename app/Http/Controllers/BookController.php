@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Bible;
 use App\Models\Book;
-use Illuminate\Http\Request;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\DomCrawler\Crawler;
 
@@ -30,11 +29,16 @@ class BookController extends Controller
         ->orderBy('number', 'ASC')
         ->get();
 
+        $nextbook = Book::find($book[0]->id + 1);
+        $previousbook = Book::find($book[0]->id - 1);
+
         return view('chapter', [
             'book' => $book,
             'chapter' => $chapter,
             'bibles' => $bibles,
-            'chapters' => $book[0]->chapters
+            'chapters' => $book[0]->chapters,
+            'nextbook' => $nextbook,
+            'previousbook' => $previousbook
         ]);
     }
 

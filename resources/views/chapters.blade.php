@@ -1,6 +1,6 @@
 @extends('layouts.1')
 
-@section('title', 'Capítulo')
+@section('title', $book[0]->name)
 
 @section('content')
     <div class="row">
