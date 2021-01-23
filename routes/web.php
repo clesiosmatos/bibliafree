@@ -2,6 +2,7 @@
 
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\SitemapGenerator;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'App\Http\Controllers\HomeController@show');
+
+Route::get('/sitemap', function(){
+
+    SitemapGenerator::create('https://bibliafree.com.br')->writeToFile('sitemap.xml');
+    
+    return 'sitemap created';
+});
 
 Route::get('/{version}/{book}/{chapter}', 'App\Http\Controllers\BookController@showChapter');
 Route::get('/{version}/{book}', 'App\Http\Controllers\BookController@showChapters');
