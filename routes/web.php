@@ -27,6 +27,8 @@ Route::get('/sitemap', function(){
 Route::get('/{version}/{book}/{chapter}', 'App\Http\Controllers\BookController@showChapter');
 Route::get('/{version}/{book}', 'App\Http\Controllers\BookController@showChapters');
 
+Route::get('/{version}/{book}/{chapter}/{verse}', 'App\Http\Controllers\VerseController@show');
+
 Route::get('/{version}', 'App\Http\Controllers\VersionController@show');
 
 Route::get('/crawler/{version}/{book}/{chapter}', 'App\Http\Controllers\BookController@crawler');

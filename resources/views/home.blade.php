@@ -4,9 +4,7 @@
 
 @section('content')
 <div class="row">
-  <div class="col-12">
-    <div class="row">
-      <div class="col-6">
+      <div class="col-xs-12 col-sm-6">
         <h4>Velho Testamento</h4>
         <div class="row">
           <div class="col-6">
@@ -25,7 +23,7 @@
           </div>
         </div>
       </div>
-      <div class="col-6">
+      <div class="col-xs-12 col-sm-6">
         <h4>Novo Testamento</h4>
         <div class="row">
           <div class="col-6">
@@ -45,6 +43,4 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
 @endsection
