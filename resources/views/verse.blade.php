@@ -7,7 +7,7 @@
         <div class="col-12">
             <p class="lead">{{ $verseText }}</p>
             <p class="h4 text-end">
-                <a href="/{{ Session::get('version')}}/{{ $book_abreviation }}/{{ $chapter }}/{{ $verse }}">
+                <a href="/version/{{ Session::get('version')}}/book/{{ $book_abreviation }}/{{ $chapter }}">
                     {{ $book }} {{ $chapter }}:{{ $verse }}
                 </a>
             </p>

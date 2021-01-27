@@ -11,7 +11,6 @@ class HomeController extends Controller
 {
     public function show(Request $request)
     {
-        //SitemapGenerator::create('https://bibliafree.com.br')->writeToFile(public_path());
         $books = Book::all();
 
         $request->session()->put('version', 'acf');

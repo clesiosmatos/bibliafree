@@ -24,11 +24,12 @@ Route::get('/sitemap', function(){
     return 'sitemap created';
 });
 
-Route::get('/{version}/{book}/{chapter}', 'App\Http\Controllers\BookController@showChapter');
-Route::get('/{version}/{book}', 'App\Http\Controllers\BookController@showChapters');
+Route::get('/version/{version}/book/{book}/{chapter}', 'App\Http\Controllers\BookController@showChapter');
+Route::get('/version/{version}/book/{book}', 'App\Http\Controllers\BookController@showChapters');
 
-Route::get('/{version}/{book}/{chapter}/{verse}', 'App\Http\Controllers\VerseController@show');
+Route::get('/version/{version}/book/{book}/{chapter}/{verse}', 'App\Http\Controllers\VerseController@show');
 
-Route::get('/{version}', 'App\Http\Controllers\VersionController@show');
+Route::get('/version/{version}', 'App\Http\Controllers\VersionController@show');
 
 Route::get('/crawler/{version}/{book}/{chapter}', 'App\Http\Controllers\BookController@crawler');
+Route::get('/remove_numbers', 'App\Http\Controllers\BookController@remove_numbers');

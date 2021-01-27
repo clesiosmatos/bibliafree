@@ -31,8 +31,8 @@
       <div class="col-6 col-md">
         <h5>Bíblias</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="link-secondary" href="/acf">ACF - Almeida Corrigida Fiel</a></li>
-          <li><a class="link-secondary" href="/ara">ARA - Almeida Revista e Atualizada</a></li>
+          <li><a class="link-secondary" href="/version/acf">ACF - Almeida Corrigida Fiel</a></li>
+          <li><a class="link-secondary" href="/version/ara">ARA - Almeida Revista e Atualizada</a></li>
         </ul>
       </div>
       <div class="col-6 col-md">
