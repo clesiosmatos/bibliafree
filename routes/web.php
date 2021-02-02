@@ -29,7 +29,7 @@ Route::get('/version/{version}/book/{book}', 'App\Http\Controllers\BookControlle
 
 Route::get('/version/{version}/book/{book}/{chapter}/{verse}', 'App\Http\Controllers\VerseController@show');
 
-Route::get('/version/{version}', 'App\Http\Controllers\VersionController@show');
+Route::get('/version/{version}', 'App\Http\Controllers\HomeController@show');
 
 Route::get('/crawler/{version}/{book}/{chapter}', 'App\Http\Controllers\BookController@crawler');
 Route::get('/remove_numbers', 'App\Http\Controllers\BookController@remove_numbers');

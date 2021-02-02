@@ -6,6 +6,7 @@ use App\Models\Bible;
 use App\Models\Book;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\DomCrawler\Crawler;
+use Illuminate\Http\Request;
 
 
 class BookController extends Controller
@@ -20,7 +21,7 @@ class BookController extends Controller
         ]);
     }
 
-    public function showChapter($version, $book, $chapter = null)
+    public function showChapter(Request $request, $version, $book, $chapter = null)
     {
         $book = Book::where('abreviation', $book)->get();
         $bibles = Bible::where('version_abreviation', $version)

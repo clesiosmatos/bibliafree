@@ -7,7 +7,11 @@
         <div class="col-xs-12 col-sm-8">
             <p class="h2">{{ $book[0]->name }} {{ $chapter }}</p>
                 @foreach ($bibles as $bible)
-                    <p class="lead"><span style="color: gray" class="badge badge-primary">{{ $bible->number }}</span>{{ $bible->verse }}</p>
+                    @if(@$_GET['u'] == $bible->number)
+                        <p id="v{{ $bible->number }}" class="lead" style="background-color: #ffff004a"><span style="color: gray" class="badge badge-primary">{{ $bible->number }}</span>{{ $bible->verse }}</p>
+                    @else
+                        <p class="lead"><span style="color: gray" class="badge badge-primary">{{ $bible->number }}</span>{{ $bible->verse }}</p>
+                    @endif
                 @endforeach
         </div>
         <div class="col-xs-12 col-sm-4">

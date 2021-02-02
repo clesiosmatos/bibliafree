@@ -6,7 +6,12 @@
 <div class="row">
     <div class="col-xs-12 col-sm-6">
         <h5>Versículo do dia</h5>
-        <p class="lead">E, quando Silas e Timóteo desceram da Macedônia, foi Paulo impulsionado no espírito, testificando aos judeus que Jesus era o Cristo.</p>
+        <p class="lead">{{ $verseRandom['verse'] }}</p>
+        <p class="h6 text-end">
+            <a href="/version/{{ $version }}/book/{{ $verseRandom['book_abreviation'] }}/{{ $verseRandom['chapter'] }}?u={{ $verseRandom['number'] }}#v{{ $verseRandom['number'] }}">
+                {{ $verseRandom['book_name'] }} {{ $verseRandom['chapter'] }}:{{ $verseRandom['number'] }}
+            </a>
+        </p>
     </div>
 </div>
 
@@ -17,14 +22,14 @@
           <div class="col-6">
             @foreach($books as $book)
               @if(($book->id > 1) && ($book->id < 66)) 
-                <span><a href="/version/{{ Session::get('version')}}/book/{{ $book->abreviation }}">{{ $book->name }}</a></span><br>
+                <span><a href="/version/{{ $version }}/book/{{ $book->abreviation }}">{{ $book->name }}</a></span><br>
               @endif
             @endforeach
           </div>
           <div class="col-6">
             @foreach($books as $book)
               @if(($book->id > 66) && ($book->id < 85)) 
-                <span><a href="/version/{{ Session::get('version')}}/book/{{ $book->abreviation }}">{{ $book->name }}</a></span><br>
+                <span><a href="/version/{{ $version }}/book/{{ $book->abreviation }}">{{ $book->name }}</a></span><br>
               @endif
             @endforeach
           </div>
@@ -36,14 +41,14 @@
           <div class="col-6">
             @foreach($books as $book)
               @if(($book->id > 84) && ($book->id < 99)) 
-                <span><a href="/version/{{ Session::get('version')}}/book/{{ $book->abreviation }}">{{ $book->name }}</a></span><br>
+                <span><a href="/version/{{ $version }}/book/{{ $book->abreviation }}">{{ $book->name }}</a></span><br>
               @endif
             @endforeach
           </div>
           <div class="col-6">
             @foreach($books as $book)
               @if(($book->id > 98) && ($book->id < 112)) 
-                <span><a href="/version/{{ Session::get('version')}}/book/{{ $book->abreviation }}">{{ $book->name }}</a></span><br>
+                <span><a href="/version/{{ $version }}/book/{{ $book->abreviation }}">{{ $book->name }}</a></span><br>
               @endif
             @endforeach
           </div>
