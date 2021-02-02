@@ -12,6 +12,7 @@ class HomeController extends Controller
     public function show(Request $request)
     {
         $books = Book::all();
+        //$bibles = Bible::where('version', )
 
         $request->session()->put('version', 'acf');
 

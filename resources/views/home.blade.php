@@ -4,6 +4,13 @@
 
 @section('content')
 <div class="row">
+    <div class="col-xs-12 col-sm-6">
+        <h5>Versículo do dia</h5>
+        <p class="lead">E, quando Silas e Timóteo desceram da Macedônia, foi Paulo impulsionado no espírito, testificando aos judeus que Jesus era o Cristo.</p>
+    </div>
+</div>
+
+<div class="row">
       <div class="col-xs-12 col-sm-6">
         <h4>Velho Testamento</h4>
         <div class="row">

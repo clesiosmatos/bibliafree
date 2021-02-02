@@ -8,7 +8,7 @@
             <h2>{{ $book[0]->name }}</h2>
             <ul>
                 @for($i=1; $i <= $book[0]->chapters; $i++)
-                    <li class="d-inline p-3 fs-1"><a href="/version/{{ Session::get('version')}}/book/{{ $book[0]->abreviation }}/{{ $i }}">{{ $i }}</a></li>
+                    <li class="d-inline p-3 fs-1"><a href="/version/{{ $version }}/book/{{ $book[0]->abreviation }}/{{ $i }}">{{ $i }}</a></li>
                 @endfor
             </ul>
         </div>

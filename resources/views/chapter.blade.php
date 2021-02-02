@@ -14,7 +14,7 @@
             <p class="h4">Capítulos</p>
             <p>
                 @for($i=1; $i <= $chapters; $i++)
-                    <a href="/version/{{ Session::get('version')}}/book/{{ $book[0]->abreviation }}/{{ $i }}">{{ $i }}</a>
+                    <a href="/version/{{ $version }}/book/{{ $book[0]->abreviation }}/{{ $i }}">{{ $i }}</a>
                 @endfor
             </p>
         </div>
@@ -27,34 +27,34 @@
                         <div class="col-4 lead"></div>
                     @else
                         <div class="col-4 lead">
-                            <a href="/version/{{ Session::get('version')}}/book/{{ $previousbook->abreviation }}/{{ $previousbook ? $previousbook->chapters : $chapter }}">
+                            <a href="/version/{{ $version }}/book/{{ $previousbook->abreviation }}/{{ $previousbook ? $previousbook->chapters : $chapter }}">
                                 < {{ $previousbook->name }} {{ $previousbook ? $previousbook->chapters : $chapter }}
                             </a>
                         </div>
                     @endif
                 @else
                     <div class="col-4 lead">
-                        <a href="/version/{{ Session::get('version')}}/book/{{ $book[0]->abreviation }}/{{ $chapter -1 }}">
+                        <a href="/version/{{ $version }}/book/{{ $book[0]->abreviation }}/{{ $chapter -1 }}">
                             < {{ $book[0]->name }} {{ $chapter -1 }}
                         </a>
                     </div>
                 @endif
                 <div class="col-4 text-center lead">
-                    <a href="/version/{{ Session::get('version')}}/book/{{ $book[0]->abreviation }}">Capítulos</a>
+                    <a href="/version/{{ $version }}/book/{{ $book[0]->abreviation }}">Capítulos</a>
                 </div>
                 @if($chapters <= $chapter)
                     @if(($book[0]->name == 'Apocalipse') && ($chapters = $chapter -1))
                         <div class="col-4 text-end lead"></div>
                     @else
                         <div class="col-4 text-end lead">
-                            <a href="/version/{{ Session::get('version')}}/book/{{ $nextbook->abreviation }}/{{ $nextbook ? 1 : $chapter + 1 }}">
+                            <a href="/version/{{ $version }}/book/{{ $nextbook->abreviation }}/{{ $nextbook ? 1 : $chapter + 1 }}">
                                 {{ $nextbook->name }} {{ $nextbook ? 1 : $chapter + 1 }} >
                             </a>
                         </div>
                     @endif
                 @else
                     <div class="col-4 text-end lead">
-                        <a href="/version/{{ Session::get('version')}}/book/{{ $book[0]->abreviation }}/{{ $chapter + 1 }}">
+                        <a href="/version/{{ $version }}/book/{{ $book[0]->abreviation }}/{{ $chapter + 1 }}">
                         {{ $book[0]->name }} {{ $chapter + 1 }} >
                         </a>
                     </div>

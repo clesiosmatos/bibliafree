@@ -34,6 +34,7 @@ class BookController extends Controller
 
         return view('chapter', [
             'book' => $book,
+            'version' => $version,
             'chapter' => $chapter,
             'bibles' => $bibles,
             'chapters' => $book[0]->chapters,
