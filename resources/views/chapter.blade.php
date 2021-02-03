@@ -8,9 +8,9 @@
             <p class="h2">{{ $book[0]->name }} {{ $chapter }}</p>
                 @foreach ($bibles as $bible)
                     @if(@$_GET['u'] == $bible->number)
-                        <p id="v{{ $bible->number }}" class="lead" style="background-color: #ffff004a"><span style="color: gray" class="badge badge-primary">{{ $bible->number }}</span>{{ $bible->verse }}</p>
+                        <p id="v{{ $bible->number }}" class="lead" style="margin-bottom: 0px;background-color: #ffff004a"><span style="color: gray" class="badge badge-primary">{{ $bible->number }}</span>{{ $bible->verse }}</p>
                     @else
-                        <p class="lead"><span style="color: gray" class="badge badge-primary">{{ $bible->number }}</span>{{ $bible->verse }}</p>
+                        <p class="lead" style="margin-bottom: 0px;"><span style="color: gray;" class="badge badge-primary">{{ $bible->number }}</span>{{ $bible->verse }}</p>
                     @endif
                 @endforeach
         </div>
