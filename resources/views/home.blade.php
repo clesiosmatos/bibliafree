@@ -5,13 +5,22 @@
 @section('content')
 <div class="row">
     <div class="col-xs-12 col-sm-6">
-        <h5>Versículo do dia</h5>
+        <h5>Versículo aleatório</h5>
         <p class="lead">{{ $verseRandom['verse'] }}</p>
         <p class="h6 text-end">
             <a href="/version/{{ $version }}/book/{{ $verseRandom['book_abreviation'] }}/{{ $verseRandom['chapter'] }}?u={{ $verseRandom['number'] }}#v{{ $verseRandom['number'] }}">
                 {{ $verseRandom['book_name'] }} {{ $verseRandom['chapter'] }}:{{ $verseRandom['number'] }}
             </a>
         </p>
+        <p>
+          <a target="_blank" href="https://api.whatsapp.com/send?text={{ $verseRandom['verse'] }}%0A{{ $verseRandom['book_name'] }} {{ $verseRandom['chapter'] }}:{{ $verseRandom['number'] }}" class="btn btn-sm btn-success">
+            <i class="fab fa-whatsapp"></i> Whatsapp
+          </a>
+          <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://bibliafree.com.br/version/{{ $version }}/book/{{ $verseRandom['book_abreviation'] }}/{{ $verseRandom['chapter'] }}/{{ $verseRandom['number'] }}" class="btn btn-sm btn-primary">
+            <i class="fab fa-facebook"></i> Facebook
+          </a>
+        </p>
+
     </div>
 </div>
 
